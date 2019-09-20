@@ -1,0 +1,11 @@
+---
+title: "Branch.Practicum"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+My name is _Maggie Tjia_. 
+My favorite color is __Gray__.  
