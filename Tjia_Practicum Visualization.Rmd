@@ -1,0 +1,30 @@
+---
+title: "Practicum Visualization"
+author: "Maggie Tjia"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+unzip("Consumer_Complaints_lemma.csv.zip") 
+complaints <- read_csv("Consumer_Complaints_lemma.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tm)
+library(wordcloud) 
+library(dplyr)
+words <- (as.character(complaints$Lemmatized)) %>%
+  count(Lemmatized) %>%
+  wordcloud(Lemmatized, n, max.words = 50)
+```
+
+```{r message=FALSE, warning=FALSE}
+stuff <- as.character(complaints$Lemmatized)
+wordcloud(complaints$Lemmatized, max.words = 100)
+```
+
